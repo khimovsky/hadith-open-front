@@ -1,0 +1,18 @@
+---
+import '../styles/card.scss';
+const { title = 'Заголовок не найден', description = 'Текст не найден', source = 'Источник не найден' } = Astro.props;
+---
+<div class="card">
+  <div class="content">
+    <div class="card-title">
+      <span class="card-title-text">{title}</span>
+    </div>
+    <div class="card-description">
+      <span class="card-description-text">{description}</span>
+    </div>
+  </div>
+  <div class="card-source">
+    <img src="/assets/icons/book.svg">
+    <span class="card-source-text">{source}</span>
+  </div>
+</div>

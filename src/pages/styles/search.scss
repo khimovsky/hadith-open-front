@@ -1,0 +1,32 @@
+@use '../../core/styles/variables.scss' as *;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.content {
+  width: 100%;
+  max-width: 630px;
+  max-height: 800px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none; 
+  }
+}
+
+.search-input {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.search-result-quantity {
+  font-family: $primary-font-semibold;
+  font-size: 0.9rem;
+}

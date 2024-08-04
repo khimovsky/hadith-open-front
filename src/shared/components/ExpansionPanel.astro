@@ -1,0 +1,53 @@
+---
+import '../styles/expansionPanel.scss';
+const { title, src ='/assets/icons/navigation/down.svg', alt='down' } = Astro.props;
+const uniqueId = crypto.randomUUID();
+---
+<div class="expansion-panel" data-panel-id={ uniqueId }>
+  <div class="expansion-panel-header" data-panel-id={ uniqueId }>
+    <div class="expansion-panel-wrapper">
+      <span class="expansion-panel-header-title">{ title }</span>
+      <img class="expansion-panel-header-icon" id="expansion-icon" src={ src } alt={ alt }>
+    </div>
+  </div>
+  <div class="expansion-panel-content" data-panel-id={ uniqueId }>
+    <div class="expansion-panel-wrapper">
+      <slot />
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.expansion-panel-header').forEach(headerEl => {
+      let isOpened = false;
+      const panelId = headerEl.getAttribute('data-panel-id');
+      const contentEl = document.querySelector(`.expansion-panel-content[data-panel-id="${panelId}"]`) as HTMLElement;
+      const iconEl = document.getElementById('expansion-icon') as HTMLImageElement;
+      if (contentEl) {
+        const initialHeight = contentEl.scrollHeight + 'px';
+        contentEl.style.maxHeight = '0';
+        contentEl.style.opacity = '0'; 
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            contentEl.style.transition = 'max-height 0.5s ease, opacity 0.5s ease';
+          });
+        });
+
+        headerEl.addEventListener('click', () => {
+          if (isOpened) {
+            isOpened = false;
+            iconEl.src = '/assets/icons/navigation/down.svg'
+            contentEl.style.maxHeight = '0'; 
+            contentEl.style.opacity = '0'; 
+          } else {
+            isOpened = true;
+            iconEl.src = '/assets/icons/navigation/up.svg'
+            contentEl.style.maxHeight = initialHeight; 
+            contentEl.style.opacity = '1';
+          }
+        });
+      }
+    });
+  });
+</script>

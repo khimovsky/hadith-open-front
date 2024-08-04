@@ -1,0 +1,44 @@
+@use '../../core/styles/variables.scss' as *;
+
+.expansion-panel {
+  border-radius: 16px;
+  background-color: $secondary-color-input;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 24px;
+  }
+  
+  &-header {
+    font-family: $primary-font-medium;
+    display: flex;
+    align-items: center;
+    color: #868689;
+    cursor: pointer;
+    height: 64px;
+    font-size: 0.9rem;
+
+    &-title {
+      align-self: center;
+    }
+
+    &-icon {
+      align-self: center;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &-content {
+    font-family: $secondary-font-regular;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+
+    .expansion-panel-wrapper {
+      padding-bottom: 20px;
+    }
+  }
+}

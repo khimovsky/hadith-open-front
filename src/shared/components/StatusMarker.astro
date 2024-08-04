@@ -1,0 +1,8 @@
+---
+import '../styles/statusMarker.scss';
+const { text } = Astro.props;
+---
+<div class="content-primary-status">
+  <div class="status-marker"></div>
+  <span class="status-text">{ text }</span>
+</div>

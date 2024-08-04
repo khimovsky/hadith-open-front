@@ -1,0 +1,87 @@
+---
+import './styles/about.scss';
+import ExpansionPanel from '../shared/components/ExpansionPanel.astro';
+import PrimaryLayout from '../core/layouts/PrimaryLayout.astro';
+---
+<PrimaryLayout title="О нас" class="container">
+  <div class="wrapper" style="margin-top: 160px;"> 
+    <div class="container-title">
+      <span class="primary-title">Помогаем найти хадисы — и читать их легко</span>
+      <span class="primary-description">Немного о проекте, о планах — и еще что-то интересное</span>
+    </div>
+    <div class="container-image">
+      <img class="image" src="/assets/image/background/about.png" loading="lazy" title="image">
+      <span class="image-sourse">Обычная фотка с Unsplash</span>
+    </div>
+    <div class="container-text">
+      <div class="container-description">
+        <span class="title" id="history">О проекте</span>
+        <div class="description">
+          <span style="margin-bottom: 10px;">HadithOpen существенно упрощает доступ к многочисленным хадисам – традициям и высказываниям пророка Мухаммада, которые являются важным источником исламского права и нравственности. </span>
+          <span>Приложение позволяет пользователям находить хадисы по конкретным ключевым словам или фразам, а также по смыслу, что особенно полезно для глубокого изучения и понимания исламских текстов.</span>
+          <div class="container-panels">
+            <ExpansionPanel title="Для инвесторов" client:load>
+              <div class="description-panel">
+                <span>
+                  HadithOpen использует передовые технологии обработки естественного языка (NLP), основанные на искусственном интеллекте, что делает поиск по хадисам быстрым и точным. Эти технологии включают:
+                </span>
+                <ol class="numbered-list">
+                  <li class="numbered-list-item">Семантический анализ текста: Искусственный интеллект анализирует текст хадисов, понимая их смысл и контекст. Это позволяет находить хадисы, даже если пользователь вводит запрос, не содержащий точного совпадения слов с текстом хадиса.</li>
+                  <li class="numbered-list-item">Обработка естественного языка (NLP): С помощью NLP HadithOpen понимает контекст и лексическое значение слов, что помогает в точном определении релевантности хадиса к запросу пользователя.</li>
+                  <li class="numbered-list-item">Машинное обучение: Приложение обучается на огромных объемах данных, что позволяет ему улучшать свои результаты поиска и предлагать наиболее подходящие и полезные хадисы.</li>
+                  <li class="numbered-list-item">Анализ синонимов и синонимических рядов: Искусственный интеллект распознает и учитывает синонимы и различные способы выражения одной и той же идеи, что особенно важно при работе с религиозными текстами, которые могут быть переведены и интерпретированы по-разному.</li>
+                  <li class="numbered-list-item">Распознавание и интерпретация пользовательских запросов: Приложение способно понимать и обрабатывать запросы на разных языках и учитывать культурные особенности использования языка.</li>
+                </ol>
+              </div>
+            </ExpansionPanel>
+            <ExpansionPanel title="Благодарности" client:load>
+              <div class="description description-panel">
+                <span>От всей души благодарим создателей проекта <span class="text-color">isnad.link</span> за предоставленный доступ к базе данных. Благодаря их разрешению мы смогли спарсить множество хадисов и сделать Hadithopen ещё лучше!</span>
+                <span>Спасибо вам за доверие и сотрудничество. Надеемся на продолжение нашего плодотворного взаимодействия. Вперёд к новым высотам вместе!</span>
+              </div>
+            </ExpansionPanel>
+          </div>
+        </div>
+      </div>
+      <div class="container-description">
+        <span class="title" id="walk">Какие дальнейшие шаги?</span>
+        <div class="description">
+          <span>Мы знаем, что хороший поиск – это половина успеха. Поэтому работаем над тем, чтобы он стал ещё быстрее и умнее. Ваша задача – ввести запрос, а наша – выдать идеальный результат.</span>
+          <span>Постепенно будем добавлять новые фишки, но только те, которые реально нужны. Никакого перегруза, только самое важное.</span>
+          <span>Пишите, звоните, стучите в мессенджеры – все идеи, пожелания и замечания примем к сведению. Ведь вместе мы сделаем Hadithopen ещё лучше!</span>
+        </div>
+      </div>
+      <div class="container-technologies">
+        <span class="title text-center" id="technologies">Наш стек технологий</span>
+        <div class="technologies">
+          <div class="tenchnology">
+            <div class="tenchnology-content">
+              <span class="title">Backend</span>
+              <span class="description-tenchnology">Для создания мощной и масштабируемой серверной части (backend) мы используем следующие технологии:</span>
+            </div>
+            <div class="tenchnology-items">
+              <div class="tenchnology-item"><img src="/assets/image/technologies/backend/OpenAI.svg" title="OpenAI"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/backend/Golang.svg" title="Golang"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/backend/PostgreSQL.svg" title="PostgreSQL"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/backend/Weaviate.svg" title="Weaviate"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/backend/Meilisearch.svg" title="Meilisearch"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/backend/Frame.svg" title="Frame"></div>
+            </div>
+          </div>
+          <div class="tenchnology">
+            <div class="tenchnology-content">
+              <span class="title">Frontend</span>
+              <span class="description-tenchnology">Для разработки удобного и современного пользовательского интерфейса мы применяем следующие технологии:</span>
+            </div>
+            <div class="tenchnology-items">
+              <div class="tenchnology-item"><img src="/assets/image/technologies/frontend/Angular.svg" title="Angular"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/frontend/Astro.svg" title="Astro"></div>
+              <div class="tenchnology-item"><img src="/assets/image/technologies/frontend/Vercel.svg" title="Vercel"></div>
+              <span class="label">— Нет-нет, мы не используем треугольник<br />это Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PrimaryLayout>

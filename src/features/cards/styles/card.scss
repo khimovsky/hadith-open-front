@@ -1,0 +1,50 @@
+@use '../../../core/styles/variables.scss' as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #32302A;
+
+  .content {
+    min-height: 176px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &-title {
+    font-family: $primary-font-semibold;
+    font-size: 1.25rem;
+  }
+
+  &-description {
+    font-family: $primary-font-regular;
+    
+    &-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      line-clamp: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: auto;
+    }
+  }
+
+  &-source {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $primary-font-semibold;
+    font-size: 0.9rem;
+    color: $secondary-color;
+
+    img {
+      width: 24px;
+      height: 24px;
+      filter: brightness(0) saturate(100%) invert(55%) sepia(6%) saturate(95%) hue-rotate(2deg) brightness(98%) contrast(78%);
+    }
+  }
+}

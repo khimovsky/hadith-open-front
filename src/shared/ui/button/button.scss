@@ -1,0 +1,30 @@
+@use '../../../core/styles/variables.scss' as *;
+
+.button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: var(--button-width);
+  font-family: $primary-font-semibold;
+  font-size: 0.9rem;
+  line-height: 20px;
+  border-radius: 30px;
+  padding: 16px 28px;
+  color: var(--button-color, #FFF);
+  background-color: var(--button-background, #7F5EF3);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: var(--button-hover-background, #32236d);
+  }
+
+  &:active {
+    background-color: var(--button-active-background, #32236d);
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}

@@ -1,0 +1,180 @@
+@use '../../core/styles/variables.scss' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 160px;
+  margin-top: 144px;
+}
+
+.content-primary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  &-title {
+    align-self: center;
+    text-align: center;
+    max-width: 670px;
+    font-family: $secondary-font-bold;
+    font-size: 2.5rem;
+    line-height: 46px;
+  }
+
+  &-input {
+    width: 100%;
+    max-width: 846px;
+    min-width: 230px;
+    align-self: center;
+  }
+}
+
+.content-secondary {
+  max-width: 846px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &-title {
+    align-self: center;
+    text-align: center;
+    max-width: 460px;
+    font-family: $secondary-font-bold;
+    font-size: 2rem;
+    color: #868689;
+    line-height: 38px;
+  }
+
+  &-boxs {
+    display: flex;
+    max-width: 846px;
+    min-height: 428px;
+    border: 2px solid #2A2A2C;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &-box {
+      width: 100%;
+    }
+
+    &-box:first-child {
+      display: flex;
+      flex-direction: column;
+      background-color: transparent;
+      padding: 24px;
+      padding-top: 42px;
+
+      .box-content {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        // TODO: Дерево передатчиков
+        &-tree {
+          display: flex;
+          flex-direction: column;
+          gap: 96px;
+          font-family: $primary-font-semibold;
+          font-size: 0.9rem;
+
+          &-item {
+            position: relative;
+            align-self: center;
+            width: max-content;
+            text-align: center;
+            padding: 18px 52px;
+            border-radius: 12px;
+            border: 2px solid #2A2A2C;
+            background-color: $secondary-color-input;
+          
+            &:not(:first-child)::after {
+              // TODO: Пунктирная линия до
+            }
+          }
+          
+          &-item:first-child {
+            position: relative;
+            margin-top: 42px;
+          
+            &::before {
+              content: "";
+              width: 60px;
+              height: 54px;
+              background-color: $secondary-color-input; 
+              border: 2px solid #2A2A2C;
+              border-bottom: none;
+              border-radius: 12px 12px 0 0;
+              position: absolute;
+              z-index: -1;
+              top: -39px;
+              left: 50%;
+              transform: translateX(-50%);
+              background-image: url('/assets/icons/star-tree.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-position-y: 10px;
+            }
+          
+            &::after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              top: -2px;
+              width: 60px;
+              height: 2px;
+              background-color: $secondary-color-input;
+            }
+          }
+        }
+      }
+
+      .box-text {
+        font-family: $secondary-font-regular;
+        align-self: flex-end;
+        font-size: 0.65rem;
+        line-height: 16px;
+        opacity: 0.6;
+        margin-right: 4px;
+      }
+    }
+
+    &-box:last-child {
+      display: flex;
+      gap: 12px;
+      background-color: #2A2A2C;
+      padding: 40px 20px;
+
+      .box-image {
+        width: 32px;
+        height: 32px;
+      }
+
+      .box-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    
+        &-text {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+    
+          &-title {
+            font-family: $primary-font-semibold;
+            font-size: 0.9rem;
+            line-height: 20px;
+          }
+    
+          &-description {
+            font-family: $secondary-font-regular;
+            font-size: 0.75rem;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}

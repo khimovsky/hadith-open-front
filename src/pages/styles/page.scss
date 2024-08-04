@@ -1,0 +1,64 @@
+@use '../../core/styles/variables.scss' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 120px;
+  padding-bottom: 120px;
+  font-family: $primary-font-semibold;
+}
+
+.content-title {
+  max-width: 1063px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.source-title {
+  font-size: 0.9rem;
+  color: #AA60FC
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 42px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.content-text {
+  max-width: 846px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 40px;
+}
+
+.text {
+  font-family: $secondary-font-regular;
+  font-size: 1.1rem;
+  line-height: 36px;
+}
+
+.text-original {
+  font-family: var(--primary-font-arabic-regular);
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  line-height: 48px;
+}
+
+.text-translate {
+  display: flex;
+  flex-direction: column;
+}

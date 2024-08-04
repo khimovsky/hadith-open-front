@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'MontserratAlternates-Regular';
+  src: url('/assets/fonts/MontserratAlternates/MontserratAlternates-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'MontserratAlternates-SemiBold';
+  src: url('/assets/fonts/MontserratAlternates/MontserratAlternates-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'MontserratAlternates-Medium';
+  src: url('/assets/fonts/MontserratAlternates/MontserratAlternates-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('/assets/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'KFGQPCUthmanTahaNaskh-Regular';
+  src: url('/assets/fonts/KFGQPCUthmanTahaNaskh-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Gropled-Bold';
+  src: url('/assets/fonts/Gropled-Bold.otf');
+}
+
+// Fonts
+$primary-font-regular: 'MontserratAlternates-Regular';
+$primary-font-semibold: 'MontserratAlternates-SemiBold';
+$primary-font-medium: 'MontserratAlternates-Medium';
+$primary-font-arabic-regular: 'KFGQPCUthmanTahaNaskh-Regular';
+$secondary-font-regular: 'Montserrat-Regular';
+$secondary-font-bold: 'Gropled-Bold';
+// Colors
+$primary-color: white;
+$secondary-color: #898886;
+$secondary-color-input: #232325;
+$primary-accent-color: #2A2A2C;

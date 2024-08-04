@@ -1,0 +1,7 @@
+@use './themes.scss' as *;
+@use './variables.scss' as *;
+
+* { box-sizing: border-box; }
+html, body { font-size: 16px; }
+body { background-color: $dark; color: $white; min-height: 100%; max-width: 1440px; margin: 0 auto; padding: 0 80px; }
+a { cursor: pointer; text-decoration: none; }

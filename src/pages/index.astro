@@ -1,0 +1,49 @@
+---
+import './styles/index.scss';
+import PrimaryLayout from "../core/layouts/PrimaryLayout.astro";
+import InputSearch from "../shared/components/InputSearch.astro";
+import StatusMarker from '../shared/components/StatusMarker.astro';
+import Button from "../shared/ui/button/Button.astro";
+---
+<PrimaryLayout title="Главная">
+  <div class="wrapper">
+    <div class="content-primary">
+      <StatusMarker text="Улучшаем функционал" />
+      <span class="content-primary-title">HadithOpen: Ваш путеводитель по миру хадисов</span>
+      <div class="content-primary-input">
+        <InputSearch redirectTo="/search" placeholder="Поиск хадисов" />
+      </div>
+    </div>
+    <div class="content-secondary">
+      <span class="content-secondary-title">Мы первые, кто это сделал!</span>
+      <div class="content-secondary-boxs">
+        <div class="content-secondary-boxs-box">
+          <div class="box-content">
+            <!-- TODO: Дерево передатчиков -->
+             <div class="box-content-tree">
+                <div class="box-content-tree-item">
+                  <span>Пророк</span>
+                </div>
+                <div class="box-content-tree-item">
+                  <span>Сподвижник</span>
+                </div>
+             </div>
+          </div>
+          <span class="box-text">функция в Beta-версии</span>
+        </div>
+        <div class="content-secondary-boxs-box">
+          <img class="box-image" src="/assets/icons/star.svg">
+          <div class="box-content">
+            <div class="box-content-text">
+              <span class="box-content-text-title">Цепочка передатчиков — новая функция для проверки подлинности хадисов</span>
+              <span class="box-content-text-description">Цепочка передатчиков - это новый уникальный инструмент, который позволяет вам погружаться в глубину истории хадисов.</span>
+              <span class="box-content-text-description">Каждый хадис, как драгоценный артефакт, передается от одного передатчика к другому, сохраняя при этом свою аутентичность и точность.</span>
+              <span class="box-content-text-description">Наша новая функция дает вам возможность увидеть этот путь, как на ладони</span>
+            </div>
+            <Button width="165px" background="#7F5EF3">Попробовать</Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PrimaryLayout>

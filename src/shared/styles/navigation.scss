@@ -1,0 +1,55 @@
+@use '../../core/styles/variables.scss' as *;
+
+.navigation {
+  font-family: $primary-font-semibold;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin: 0;
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  .navigation-items {
+    display: flex;
+    align-items: center;
+    line-height: 40px;
+    gap: 52px;
+
+    .navigation-items-item {
+      white-space: nowrap;
+      font-size: 0.9rem;
+      color: $secondary-color;
+      transition: color 0.3s;
+
+      &:hover,
+      &:active {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .color-gradient {
+    background: linear-gradient(90deg, rgba(157,120,255,1), rgba(0,219,222,1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    color: transparent;   
+
+    &:hover,
+    &:active {
+      background: none;
+      color: $primary-color; 
+      -webkit-background-clip: unset; 
+      -webkit-text-fill-color: $primary-color; 
+      background-clip: text; 
+    }
+  }
+}

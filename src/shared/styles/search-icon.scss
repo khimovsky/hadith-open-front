@@ -1,0 +1,18 @@
+.search-icon {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-image: url('/assets/icons/search/search-default.svg');
+  background-size: 24px;
+  background-position: center;
+  cursor: pointer;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: url('/assets/icons/search/search-hover.svg');
+  }
+  &:active {
+    transform: scale(0.98);
+    background-image: url('/assets/icons/search/search-active.svg');
+  }
+}

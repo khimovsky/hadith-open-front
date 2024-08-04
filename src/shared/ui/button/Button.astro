@@ -1,0 +1,15 @@
+---
+import './button.scss';
+const { width='100%', color = '#FFF', background = '#7F5EF3', hoverBackground = '#6953C5', activeBackground = '#5C49AD' } = Astro.props;
+---
+<button class="button"
+  style={`
+    --button-width: ${ width };
+    --button-color: ${ color }; 
+    --button-background: ${ background }; 
+    --button-hover-background: ${ hoverBackground }; 
+    --button-active-background: ${ activeBackground };
+  `}
+>
+  <slot />
+</button>

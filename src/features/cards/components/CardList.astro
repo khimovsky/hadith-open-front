@@ -1,0 +1,71 @@
+---
+import Card from './Card.astro';
+import { CardService } from '../services/cardService';
+import type { CardDTO } from '../models/card.model';
+import type { ErrorStatus } from '../../../core/models/error-status.model';
+const { searchText } = Astro.props;
+
+const cardService = new CardService();
+let cards: CardDTO[] = [];
+let loading = true;
+let error: ErrorStatus | null = null;
+
+const isErrorStatus = (err: unknown): err is ErrorStatus => {
+  return (err as ErrorStatus).status !== undefined && (err as ErrorStatus).message !== undefined;
+};
+
+const updateDOM = () => {
+  const cardList = document.getElementById('card-list');
+  if (!cardList) return;
+
+  cardList.innerHTML = '';
+
+  if (loading) {
+    cardList.innerHTML = '<div>Loading...</div>';
+  } else if (error) {
+    cardList.innerHTML = `<div>Error: ${error}</div>`;
+  } else {
+    // Clear previous cards
+    cardList.innerHTML = '';
+
+    // Create a new list of cards
+    cards.forEach(card => {
+      const cardElement = document.createElement('div');
+      cardElement.innerHTML = `<Card title="${card.title}" description="${card.description}" source="${card.source}" />`;
+      cardList.appendChild(cardElement);
+    });
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cardsSubscription = cardService.cards$.subscribe(data => {
+    cards = data;
+    loading = false;
+    updateDOM();
+  });
+
+  const statusSubscription = cardService.status$.subscribe(status => {
+    loading = status === 'loading';
+    updateDOM();
+  });
+
+  const errorSubscription = cardService.error$.subscribe(err => {
+    if (isErrorStatus(err)) {
+      error = err;
+    } else {
+      error = null;
+    }
+    updateDOM();
+  });
+
+  cardService.loadCards(searchText);
+
+  return () => {
+    cardsSubscription.unsubscribe();
+    statusSubscription.unsubscribe();
+    errorSubscription.unsubscribe();
+    cardService.destroy();
+  };
+});
+---
+<div class="content" id="card-list"></div>

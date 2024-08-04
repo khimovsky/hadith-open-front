@@ -1,0 +1,37 @@
+---
+import '../styles/inputSearch.scss';
+const { redirectTo, placeholder } = Astro.props;
+---
+<form class="search-form" id="search-form" data-redirect-to={ redirectTo }>
+  <input class="search-form-input" id="search-form-input" type="text" placeholder={ placeholder }>
+  <div class="search-form-icon" id="search-form-icon"></div>
+</form>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('search-form-input');
+    const searchIcon = document.getElementById('search-form-icon');
+    
+    if (searchForm && searchInput && searchIcon) {
+      const searchInputElement = searchInput as HTMLInputElement;
+      const redirectTo = searchForm.getAttribute('data-redirect-to');
+      
+      const performRedirect = () => {
+        const searchInputText = searchInputElement.value.trim();
+        if (searchInputText.length !== 0) {
+          window.location.href = `${redirectTo}?query=${encodeURIComponent(searchInputText)}`;
+          searchInputElement.value = '';
+        }
+      };
+      
+      searchForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        performRedirect();
+      });
+      
+      searchIcon.addEventListener('click', () => {
+        performRedirect();
+      });
+    }
+  });
+</script>

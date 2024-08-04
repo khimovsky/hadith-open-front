@@ -1,0 +1,14 @@
+---
+import '../styles/search-icon.scss';
+---
+<div class="search-icon" id="search-icon"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchIcon = document.getElementById('search-icon');
+    if (searchIcon !== null) {
+      searchIcon.addEventListener('click', () => {
+        window.location.pathname = '/';
+      });
+    }
+  });
+</script>

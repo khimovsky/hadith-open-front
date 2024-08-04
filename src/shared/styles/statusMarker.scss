@@ -1,0 +1,26 @@
+@use '../../core/styles/variables.scss' as *;
+
+.content-primary-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: max-content;
+  padding: 10px 16px;
+  border-radius: 30px;
+  border: 1px solid #2A2A2C;
+  background-color: $secondary-color-input;
+
+  .status-marker {
+    width: 20px;
+    height: 20px;
+    background-image: url('/assets/icons/status-marker.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .status-text {
+    font-size: 0.9rem;
+    font-family: $primary-font-semibold;
+    white-space: nowrap;
+  }
+}
