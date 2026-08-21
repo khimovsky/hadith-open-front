@@ -19,7 +19,7 @@ const { redirectTo, placeholder } = Astro.props;
       const performRedirect = () => {
         const searchInputText = searchInputElement.value.trim();
         if (searchInputText.length !== 0) {
-          window.location.href = `${redirectTo}?query=${encodeURIComponent(searchInputText)}`;
+          window.location.href = `${redirectTo ?? ''}?query=${encodeURIComponent(searchInputText)}`;
           searchInputElement.value = '';
         }
       };

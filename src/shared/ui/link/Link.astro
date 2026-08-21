@@ -1,0 +1,27 @@
+---
+import './link.scss';
+
+const {
+    href,
+    width = '100%',
+    color = '#FFF',
+    background = '#7F5EF3',
+    hoverBackground = '#6953C5',
+    activeBackground = '#5C49AD',
+    target = '_self',
+    } = Astro.props;
+---
+<a class="button"
+    href={href}
+    target={target}
+    rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+    style={`
+        --button-width: ${width};
+        --button-color: ${color};
+        --button-background: ${background};
+        --button-hover-background: ${hoverBackground};
+        --button-active-background: ${activeBackground};
+      `}
+>
+    <slot />
+</a>

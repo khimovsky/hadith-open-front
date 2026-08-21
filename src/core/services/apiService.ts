@@ -59,7 +59,7 @@ export class ApiService {
     });
   }
 
-  private handleResponse<T>(response: Response): Promise<T | undefined> {
+  private async handleResponse<T>(response: Response): Promise<T | undefined> {
     if (!response.ok) {
       return response.text().then(text => {
         throw this.createErrorStatus({
